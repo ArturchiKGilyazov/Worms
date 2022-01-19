@@ -11,7 +11,8 @@ namespace TheWorms_CS_lab_Windows
         {
             
             var cancellationTokenSource = new CancellationTokenSource(5000);
-            CreateHostBuilder(args).Build().RunAsync(cancellationTokenSource.Token);
+            CreateHostBuilder(args).Build().StartAsync(cancellationTokenSource.Token);
+            // CreateHostBuilder(args).Build().Run();
             return 0;
         }
         

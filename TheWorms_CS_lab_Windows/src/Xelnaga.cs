@@ -26,6 +26,12 @@ namespace TheWorms_CS_lab_Windows
         
         public Task StartAsync(CancellationToken cancellationToken)
         {
+            Task.Run(RunAsync);
+            return Task.CompletedTask;
+        }
+
+        public void RunAsync()
+        {
             var god = new Creator(
                 _foodService,
                 _intellectualService,
@@ -35,7 +41,6 @@ namespace TheWorms_CS_lab_Windows
                 _negotiatingService
             );
             god.Create();
-            return Task.CompletedTask;
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
